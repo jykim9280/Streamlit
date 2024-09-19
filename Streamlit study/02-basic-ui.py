@@ -8,7 +8,7 @@ button = st.button('버튼을 눌러보세요')
 
 if button:
     st.write(':blue[버튼]이 눌렸습니다 :sparkles:')
-
+#b:컬러명[], :이모지:
 
 # 파일 다운로드 버튼
 # 샘플 데이터 생성
@@ -29,7 +29,7 @@ st.download_button(
 agree = st.checkbox('동의 하십니까?')
 
 if agree:
-    st.write('동의 해주셔서 감사합니다 :100:')
+    st.write(':blue[동의 해주셔서 감사합니다] :100:')
 
 # 라디오 선택 버튼
 mbti = st.radio(
@@ -44,6 +44,7 @@ else:
     st.write("당신에 대해 :red[알고 싶어요]:grey_exclamation:")
 
 # 선택 박스
+# index로 선택 개수 제한
 mbti = st.selectbox(
     '당신의 MBTI는 무엇입니까?',
     ('ISTJ', 'ENFP', '선택지 없음'), 
@@ -61,7 +62,7 @@ else:
 options = st.multiselect(
     '당신이 좋아하는 과일은 뭔가요?',
     ['망고', '오렌지', '사과', '바나나'],
-    ['망고', '오렌지'])
+    ['망고', '오렌지']) #옵션을 선택한 상태로 제한
 
 st.write(f'당신의 선택은: :red[{options}] 입니다.')
 
@@ -77,7 +78,7 @@ start_time = st.slider(
     min_value=dt(2020, 1, 1, 0, 0), 
     max_value=dt(2020, 1, 7, 23, 0),
     value=dt(2020, 1, 3, 12, 0),
-    step=datetime.timedelta(hours=1),
+    step=datetime.timedelta(hours=1), #days 등으로 수정
     format="MM/DD/YY - HH:mm")
 st.write("선택한 약속 시간:", start_time)
 
@@ -94,7 +95,7 @@ number = st.number_input(
     label='나이를 입력해 주세요.', 
     min_value=10, 
     max_value=100, 
-    value=30,
+    value=30, #디폴트 설정 값
     step=5
 )
 st.write('당신이 입력하신 나이는:  ', number)

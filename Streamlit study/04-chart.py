@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from matplotlib import font_manager, rc
 
 # 한글 폰트 설정
 plt.rcParams['font.family'] = "AppleGothic"
@@ -48,7 +49,7 @@ ax.set_ylabel('Scores')
 ax.set_title('Scores by group and gender')
 ax.legend()
 
-st.pyplot(fig)
+st.pyplot(fig) #fig 만 넣어주면 됨
 
 ##### Barcode
 
@@ -67,4 +68,4 @@ ax.set_axis_off()
 ax.imshow(code.reshape(1, -1), cmap='binary', aspect='auto',
           interpolation='nearest')
 
-st.pyplot(fig)
+st.pyplot(fig) #plt.show 대신 st.pyplot(fig) 사용
